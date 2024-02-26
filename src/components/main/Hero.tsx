@@ -20,7 +20,7 @@ const Hero = () => {
       highlightColor: 0xc6cced,
       midtoneColor: 0x6a8ff5,
       lowlightColor: 0x3bac,
-      zoom: 0.7
+      zoom: 1.5
     });
   }, []);
 
@@ -33,7 +33,7 @@ const Hero = () => {
             <source src='./'
         </video> */}
         </div>
-        Hero
+        
       </div>
     </div>
   );
