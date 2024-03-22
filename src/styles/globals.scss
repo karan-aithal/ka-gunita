@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Imports
+	# Custom properties
+	# Reset
+	# Typography
+	# Elements
+	# Links
+# Accessibility
+# Layout
+# Forms
+# Header
+	# Main navigation menu
+# Content navigation
+# Footer
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Tailwind base */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*--------------------------------------------------------------
+# Imports
+--------------------------------------------------------------*/
+/* Custom Components */
+@use 
+
+@import '/src/styles/_nav.scss'
+
+
+
+.navbar{
+    @include 
+     
+}
+
