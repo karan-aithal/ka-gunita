@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
       <meta charSet="utf-8"></meta>
        <title></title>
-       <link href="style.css" rel="stylesheet" />
+       {/* <link href="style.css" rel="stylesheet" /> */}
        <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"strategy="beforeInteractive"/>
        <Script type="module" src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/src/vanta.fog.js"/>
       </head>

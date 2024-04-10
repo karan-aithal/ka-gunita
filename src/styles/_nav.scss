@@ -1,22 +1,58 @@
 // 1095c1
 
-@mixin navLink {
-  --c: #1095c1;
-  line-height: 1.2em;
-  background: conic-gradient(from -135deg at 100% 50%, var(--c) 90deg, #0000 0) 0 var(--p, 0%) / var(--s, 0%) 200% no-repeat,
-    conic-gradient(from -135deg at 1.2em 50%, #0000 90deg, var(--c) 0) 100% var(--p, 0%) / var(--s, 0%) 200% no-repeat;
-  transition: 0.4s ease-in, background-position 0s;
-}
+// @mixin navLink {
+//   --c: #1095c1;
+//   line-height: 1.2em;
+//   background: conic-gradient(from -135deg at 100% 50%, var(--c) 90deg, #0000 0) 0 var(--p, 0%) / var(--s, 0%) 200% no-repeat,
+//     conic-gradient(from -135deg at 1.2em 50%, #0000 90deg, var(--c) 0) 100% var(--p, 0%) / var(--s, 0%) 200% no-repeat;
+//   transition: 0.4s ease-in, background-position 0s;
+// }
 
-@mixin navLink-hover {
-  .title :hover {
-    --p: 100%;
-    /* it should be .6em (1.2em/2) but we use a litte bigger to avoid gaps */
-    --s: calc(50% + 0.61em);
-  }
-}
+// @mixin navLink-hover {
+//   .title :hover {
+//     --p: 100%;
+//     /* it should be .6em (1.2em/2) but we use a litte bigger to avoid gaps */
+//     --s: calc(50% + 0.61em);
+//   }
+// }
 
-// Link {
+
+// @mixin nav-item($padding: 1rem, $hover-color: blue) {
+//   padding: $padding;
+
+//   // Style for the link
+//   & a {
+//     display: inline-block;
+//     text-decoration: none;
+//     color: inherit;
+//     transition: color 0.3s ease-in-out;
+
+//     &:hover {
+//       color: $hover-color;
+//     }
+//   }
+
+//   // Style for active link (optional)
+//   &.active {
+//     font-weight: bold;
+//   }
+// }
+
+// @mixin nav-item($color: inherit, $hover-color: blue, $underline: none) {
+//   text-decoration: $underline;
+//   color: $color;
+//   transition: color 0.3s ease-in-out;
+
+//   &:hover {
+//     color: $hover-color;
+//   }
+
+//   // Optional focus styles
+//   &:focus {
+//     outline: 2px solid rgba(0, 0, 0, 0.2); // Adjust outline style as needed
+//   }
+// }
+// // Link {
 //     font-family: system-ui, sans-serif;
 //     font-size: 3rem;
 //     margin:0;
