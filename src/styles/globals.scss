@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Imports
+	# Custom properties
+	# Reset
+	# Typography
+	# Elements
+	# Links
+# Accessibility
+# Layout
+# Forms
+# Header
+	# Main navigation menu
+# Content navigation
+# Footer
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Tailwind base */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*--------------------------------------------------------------
+# Imports
+--------------------------------------------------------------*/
+/* Custom Components */
+ /* @use  */
+
+@import '/src/styles/_nav.scss';
+
+.nav-list {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+ 
+.nav-link {
+	/* @include nav-item; */
+}
+  /* .nav-item.highlighted { // Override hover color for a specific item
+	@include nav-item($hover-color: red);
+  }
+  
+  .nav-item.active { // Apply active styles
+	@include nav-item;
+	font-weight: bold;
+	border-bottom: 2px solid #ddd;
+  } */
+/* 
+.navbar{
+    @include 
+     
+} */
+
