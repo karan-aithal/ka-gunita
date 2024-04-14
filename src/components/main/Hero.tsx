@@ -20,7 +20,7 @@ const Hero = () => {
       highlightColor: 0xc6cced,
       midtoneColor: 0x6a8ff5,
       lowlightColor: 0x3bac,
-      zoom: 1.5
+      zoom: 0.8
     });
   }, []);
 
