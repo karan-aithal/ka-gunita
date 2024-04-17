@@ -16,7 +16,7 @@ export const Header = () => {
     transition duration-300 ease-in-out${ isDarkMode ? 'bg-transparent text-white' : 'bg-transparent text-gray-800'">
         <Logo></Logo> 
         
-        <Nav></Nav>   Header     
+        <Nav></Nav>        
     </header>
   )
 }

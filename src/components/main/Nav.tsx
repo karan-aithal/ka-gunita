@@ -2,8 +2,13 @@ import React from "react";
 import { useState , useEffect , useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
-
-
+import { Lato } from 'next/font/google'
+ 
+const lato = Lato({
+  subsets: ['latin'],
+  weight: '900',
+  variable: '--font-lato',
+})
 
 const HoverLink = ({ to, className, text }: { to: string; className: string; text: string}) => {
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -74,7 +79,7 @@ const HoverLink = ({ to, className, text }: { to: string; className: string; tex
     });
 
     if (linkRef.current && linkRef.current.style) {
-      linkRef.current.style.zIndex = '10';
+      linkRef.current.style.zIndex = '1';
     }
   };
 
@@ -95,7 +100,7 @@ const HoverLink = ({ to, className, text }: { to: string; className: string; tex
   },);
 
   return (
-    <Link href ={to} className={className}  ref={linkRef} >
+    <Link href ={to} className={`${lato.className} mx-10 box-content`} ref={linkRef}>
       {text}
     </Link>
   );
@@ -228,7 +233,7 @@ const Nav = () => {
   // { to, children }: { to: string; children: React.ReactNode }
   return (
     <>
-        <div className="navbar-nav hidden md:flex space-x-10">
+        <div className="navbar-nav hidden md:flex space-x-14 text-2xl text-white">
           <HoverLink to="/" className="hover-link" text="Home"></HoverLink>
           <HoverLink to="/about" className="hover-link" text="About"></HoverLink>
           <HoverLink to="/services" className="hover-link" text="Services"></HoverLink>
