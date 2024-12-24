@@ -5,7 +5,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const hoverBtn = document.getElementsByClassName("nav-link");
+//const hoverBtn = document.getElementsByClassName("nav-link");   // check this out !!
+
 let ripples = document.createElement("span");
 
 class HoverLink {

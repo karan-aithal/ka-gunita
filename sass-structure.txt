@@ -1,0 +1,114 @@
+sass/
+|
+|- abstracts/
+|  |- _mixins             // Sass Mixins Folder
+|  |- _variables.scss     // Sass Variables
+|
+|- core/
+|  |- _reset.scss         // Reset
+|  |- _typography.scss    // Typography Rules
+|
+|- components/
+|  |- _buttons.scss       // Buttons
+|  |- _carousel.scss      // Carousel
+|  |- _slider.scss        // Slider
+|
+|- layout/
+|  |- _navigation.scss    // Navigation
+|  |- _header.scss        // Header
+|  |- _footer.scss        // Footer
+|  |- _sidebar.scss       // Sidebar
+|  |- _grid.scss          // Grid
+|
+|- pages/
+|  |- _home.scss          // Home styles
+|  |- _about.scss         // About styles
+|
+|- sections/ (or blocks/)
+|  |- _hero.scss          // Hero section
+|  |- _cta.scss           // CTA section
+|
+|- vendors/ (if needed)
+|  |- _bootstrap.scss     // Bootstrap
+|
+- app.scss                // Main Sass file
+
+
+
+
+
+
+
+
+Base/Core : animations, base, typography, and utilies.
+
+Components : have a single scss file for each individual component
+
+Layout : Header, footer, grid, navigation
+
+Pages:  Have a single scss for each specific page
+
+Themes : deals with various themes (optional, I haven’t use it yet)
+
+Abstracts :  handles function, mixins, and variables
+
+Vendor : handles 3rd party css
+
+
+Using Variables
+Variables allow you to store values like colors, fonts, or sizes that you use multiple times.
+ This makes it easy to update these values consistently across your stylesheets.
+ // _variables.scss
+$primary-color: #3498db;
+$font-stack: 'DM Sans, sans-serif';
+$base-font-size: 16px;
+
+Using Functions and mixins 
+// _functions.scss
+@function calculate-rem($px) {
+  $base-font-size: 16px;
+  @return $px / $base-font-size * 1rem;
+}
+
+body {
+  font-size: calculate-rem(18px);
+}
+
+// _mixins.scss
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
+
+
+Applying BEM Methodology
+The BEM (Block, Element, Modifier) methodology helps to create clear and reusable components. 
+It divides the UI into blocks, elements, and modifiers to provide a scalable way to manage CSS.
+
+// _button.scss
+.button {
+  background-color: $primary-color;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+
+  &--large {
+    padding: 15px 30px;
+  }
+
+  &--secondary {
+    background-color: grey;
+  }
+}
+
+.button is the block.
+&--large and &--secondary are modifiers.
+Use in HTML:
+
+<button class="button">Default</button>
+<button class="button button--large">Large Button</button>
+<button class="button button--secondary">Secondary Button</button>

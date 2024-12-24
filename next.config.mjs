@@ -9,6 +9,8 @@ const nextConfig = {
     //  includePaths: [path.join(__dirname, './src/app')],
     //  },
     //  }
+    sassOptions: {
+      },
 };
 
 export default nextConfig;

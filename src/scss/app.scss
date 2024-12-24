@@ -15,21 +15,20 @@
 # Content navigation
 # Footer
 # Infinite scroll
---------------------------------------------------------------*/
-/* Tailwind base */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
 /* Custom Components */
  /* @use  */
+@use "layouts";
 
-@import '/src/styles/_nav.scss';
+@use "base";
+// @use "layout";
+@use "components";
+
+
+// @import '/src/styles/_nav.scss';
 
 .nav-list {
 	display: flex;
@@ -38,9 +37,9 @@
 	padding: 0;
   }
  
-.nav-link {
-	/* @include nav-item; */
-}
+// .nav-link {
+// 	/* @include nav-item; */
+// }
   /* .nav-item.highlighted { // Override hover color for a specific item
 	@include nav-item($hover-color: red);
   }

@@ -4,6 +4,8 @@ import Hero from "@/components/main/Hero";
 import Image from "next/image";
 import { BrowserRouter } from "react-router-dom";
 
+import "@/scss/app.scss";
+
 
 export default function Home() {
   return (
