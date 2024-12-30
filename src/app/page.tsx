@@ -9,11 +9,12 @@ import "@/scss/app.scss";
 
 export default function Home() {
   return (
-    <main className='h-full w-full '>     
-      <Hero></Hero>
-    <div className='flex flex-col gap-20'>
-    <Header></Header>
-    </div>
+    <main className='Main'>     
+       <div className='Head'>
+        <Header/>
+      </div>
+      <Hero/>
+   
 
     </main>    
   );

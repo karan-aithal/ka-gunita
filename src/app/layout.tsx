@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import "./../styles/globals.scss";
+
+import "@/scss/app.scss";
+
 import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +29,7 @@ export default function RootLayout({
       {/* BODY ENCOMPASSES THE ENITRE APP */}
       {/* Set Background Color to Root element of app and set scroll x,y axis overflow conditions */}
 
-      <body className={`${inter.className} bg-[#030014]  h-full`}>
+      <body className={`${inter.className} bg-[#030014] `}>
         
         {children}
       

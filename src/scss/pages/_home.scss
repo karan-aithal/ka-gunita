@@ -1,0 +1,20 @@
+.Main {
+    position: relative; /* Make Main a relative container */
+    height: 100vh;
+
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Set main axis to vertical */
+}
+
+.FogBg
+{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    position: absolute; /* Position Hero (FogBg) absolutely */
+    height: 100vh;
+    z-index: -1; /* Place Hero behind other elements */
+}
+
+
+

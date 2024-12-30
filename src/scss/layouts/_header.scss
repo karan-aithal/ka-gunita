@@ -1,0 +1,60 @@
+// Logo and Navbar customization 
+// Pulse keyframe for logo animation
+// logox
+// a tag for both logo and text
+// CName for text
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+
+.logox {
+    width: 14rem; //40;
+    height: 9rem; //36;
+    display: flex;
+    //flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+    //border: 1px solid black;
+    //animation: name duration timing-function delay iteration-count direction fill-mode;
+    // w-40 h-36 flex items-center animate-pulse
+}
+
+.logox a {
+    text-decoration: none;   
+}
+
+.logox img {
+
+    height: 9rem;           // set height to maintian link size and A/R
+    max-width: 100%;
+
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    object-fit: contain;    // set to fit parent logox div and maintain A/R
+}
+
+.CName {
+    
+    white-space: nowrap;    //  prevents the text within the span from wrapping to the next line. 
+    font-size: 20px;
+    font-weight: bold;
+
+    //min-width: 7rem;
+    //max-width: 150px; 
+    //border: 1px solid black;
+}
+
+
+
+

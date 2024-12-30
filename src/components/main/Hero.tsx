@@ -14,8 +14,8 @@ const Hero = () => {
       THREE,
       mouseControls: true,
       touchControls: true,
-      minHeight: 900.0,
-      minWidth: 600.0,      
+      minHeight: 720.0,
+      minWidth: 1280.0,      
       gyroControls: false,      
       highlightColor: 0xc6cced,
       midtoneColor: 0x6a8ff5,
@@ -26,15 +26,15 @@ const Hero = () => {
 
 
   return (
-    <div className = " h-full w-full" id="vantajs-bg">
-      <div className="relative flex flex-col h-full w-full">
+    <div className = "FogBg" id="vantajs-bg">
+      {/* <div className="relative flex flex-col h-full w-full">
         <div className="absolute -z-1 h-full w-full">
-          {/* <video autoPlay muted loop className='rotate-180 absolute top-[-340px] left-0 z-[1] w-full h-full object-cover'>
-            <source src='./'
-        </video> */}
+          <video autoPlay muted loop className='rotate-180 absolute top-[-340px] left-0 z-[1] w-full h-full object-cover'>
+            <source src='./'></source>
+        </video>
         </div>
         
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -27,8 +27,24 @@
 // @use "layout";
 @use "components";
 
+@use "pages";
 
 // @import '/src/styles/_nav.scss';
+
+// default margin of body is 8px fix;
+
+html, body
+{
+    margin: 0px; padding: 0px;
+}
+
+body 
+{
+	background-color:#6874d0;
+	height: 100vh;
+	width: auto;
+}
+
 
 .nav-list {
 	display: flex;

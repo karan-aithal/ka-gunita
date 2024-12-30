@@ -11,9 +11,13 @@ export const Header = () => {
   };
 
   return (
-    <header className="header sticky top-0 left-0 z-[20] mx-auto 
-    flex w-full items-center justify-between border-b border-gray-700 p-7 
-    transition duration-300 ease-in-out${ isDarkMode ? 'bg-transparent text-white' : 'bg-transparent text-gray-800'">
+
+    //  header sticky top-0 left-0 z-[20] mx-auto 
+    // flex w-full items-center justify-between border-b border-gray-700 p-7 
+    // transition duration-300 ease-in-out${ isDarkMode ? 'bg-transparent text-white' : 'bg-transparent text-gray-800'
+    
+    <header className="header">
+    
         <Logo></Logo> 
         
         <Nav></Nav>   Header     
