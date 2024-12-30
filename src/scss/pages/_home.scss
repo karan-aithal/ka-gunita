@@ -1,7 +1,6 @@
 .Main {
     position: relative; /* Make Main a relative container */
     height: 100vh;
-
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Set main axis to vertical */
 }
@@ -10,6 +9,7 @@
 {
     top: 0;
     left: 0;
+    background-size: cover;
     width: 100vw;
     position: absolute; /* Position Hero (FogBg) absolutely */
     height: 100vh;

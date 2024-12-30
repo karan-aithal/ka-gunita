@@ -12,7 +12,7 @@ export default function Home() {
     <main className='Main'>     
        <div className='Head'>
         <Header/>
-      </div>
+        </div>
       <Hero/>
    
 

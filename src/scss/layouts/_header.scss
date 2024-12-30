@@ -16,7 +16,7 @@
     }
 }
 
-
+// Logo and Text and link (logox)
 .logox {
     width: 14rem; //40;
     height: 9rem; //36;
@@ -55,6 +55,13 @@
     //border: 1px solid black;
 }
 
+// Logo.tsx  +  Nav.tsx 
+.header{
 
+    display: flex;
+    //flex-direction: row;
 
+    justify-content: space-between;
+
+}
 

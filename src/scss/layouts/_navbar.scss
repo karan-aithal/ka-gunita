@@ -1,4 +1,104 @@
 // 1095c1
+// Navbar 
+
+.navbar-nav{
+  align-content: center;
+}
+
+.navbar-nav nav{
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  justify-content: center;
+  
+  // margin-left: 0.75rem;
+  // display: none; 
+  // navbar-nav hidden md:flex space-x-3
+}
+
+
+// -------------------------------------------------------------------
+.nav-link {
+  color: #777;
+  /* Base text color */
+  transition: color 0.2s ease-in-out;
+  /* Smooth color transition */
+}
+
+.nav-link:hover {
+  color: #007bff;
+  /* Hover color */
+}
+// -------------------------------------------------------------------
+
+.nav-dropdown{
+  position: relative;
+}
+
+.nav-link-dropdown{
+  display: inline-flex;
+  align-items: center;
+  color: #7777;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link-dropdown:hover {
+  color: #007bff;
+}
+
+// ------------------------------------------------------------------------
+// dropdown of all Ul items 
+.dropdown-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.dropdown-items ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-dropdown:hover .dropdown-items {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+// ---------------------------------------------------------------
+
+// Ul ,list item 
+.nav-link-item {
+  color: inherit;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link-item:hover {
+  background-color: #f0f0f0;
+}
+
+// ------------------------------------------------------------------
+
+
+// @media (min-width: 768px) { /* md breakpoint in Tailwind CSS */
+//     .navbar-nav {
+//       display: flex;
+//       gap: 0.75rem; /* space-x-3 in Tailwind CSS */
+//     }
+//   }
+
 
 // @mixin navLink {
 //   --c: #1095c1;
