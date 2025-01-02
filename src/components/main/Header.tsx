@@ -20,7 +20,8 @@ export const Header = () => {
     
         <Logo></Logo> 
         
-        <Nav></Nav>   Header     
+        <Nav></Nav>   
+        {/* Header      */}
     </header>
   )
 }

@@ -17,38 +17,39 @@
 }
 
 // Logo and Text and link (logox)
-.logox {
-    width: 14rem; //40;
-    height: 9rem; //36;
+.logotx {
+    width: 15rem; //40;
+    height: 6rem; //36;
     display: flex;
     //flex-direction: row;
 
     align-items: center;
     justify-content: flex-start;
-    margin-left: 20px;
+    margin-left: 21px;
     //border: 1px solid black;
     //animation: name duration timing-function delay iteration-count direction fill-mode;
     // w-40 h-36 flex items-center animate-pulse
 }
 
-.logox a {
+.logotx a {
     text-decoration: none;   
 }
 
-.logox img {
+.logotx img {
 
-    height: 9rem;           // set height to maintian link size and A/R
+    height: 9rem;
+    min-width: 6rem;           // set height to maintian link size and A/R
     max-width: 100%;
 
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    //animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     object-fit: contain;    // set to fit parent logox div and maintain A/R
 }
 
 .CName {
-    
+    margin: 0.5rem;
     white-space: nowrap;    //  prevents the text within the span from wrapping to the next line. 
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 26px;    
+    color: #150811;
 
     //min-width: 7rem;
     //max-width: 150px; 
@@ -56,12 +57,13 @@
 }
 
 // Logo.tsx  +  Nav.tsx 
-.header{
+
+
+.header{   
 
     display: flex;
-    //flex-direction: row;
-
+   // border-right: 100px;
     justify-content: space-between;
-
+   
 }
 
