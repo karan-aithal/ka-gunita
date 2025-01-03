@@ -1,0 +1,128 @@
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.Port-left,
+.Port-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    /* Each portrait takes half the screen */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.Port-left {
+    left: 0;
+  }
+  
+  .Port-right {
+    right: 0;
+  }
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+  z-index: 2;
+  pointer-events: none; /* Prevent grid from blocking image clicks */
+}
+
+
+.grid .column {
+    pointer-events: all; /* Enable hover on columns */
+    background: rgba(0, 0, 0, 0.1); /* Slight overlay for hoverable areas */
+    transition: background 0.3s ease;
+  }
+  
+  .grid .column:hover {
+    background: rgba(0, 0, 0, 0.2); /* Highlight on hover */
+  }
+
+  .image-wrapper {
+    //position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .Port-left img{
+//  // max-width:3840px;
+//  // max-height:3071px;
+//  width: auto;
+//  height: auto;
+
+//   display: block;
+//   max-width: 100%;
+//   max-height: 100%;
+//   position: absolute;
+// //   top: 0;
+// //   bottom: 0;
+// //   left: 0;
+// //   right: 0;
+// //visibility: hidden;
+//   //object-fit: contain;
+//     //overflow: hidden;
+//     // width: 100px;
+//     // height: 100px;
+// }
+
+
+
+
+// .Port-right img{
+//     // max-width:3840px;
+//     // max-height:3071px;
+//     width: auto;
+//     height: auto;
+
+//      display: block;
+//      max-width: 100%;
+//      max-height: 100%;
+//      position: absolute;
+//    //   top: 0;
+//    //   bottom: 0;
+//    //   left: 0;
+//    //   right: 0;
+
+//      //object-fit: contain;
+//        //overflow: hidden;
+//        // width: 100px;
+//        // height: 100px;
+//    }
