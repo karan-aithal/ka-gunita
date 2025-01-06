@@ -4,67 +4,75 @@ import potraitR from "../../../public/DSC04980Transp.png"
 
 import Image from 'next/image'
 
-// const portLeft = document.querySelector('.Port-left');
-// const portRight = document.querySelector('.Port-right');
 
-// if (portLeft && portRight) {
-//     portLeft.addEventListener('mouseenter', () => {
-//         portLeft.style.filter = 'none';
-//         portRight.style.filter = 'blur(5px)';
-//     });
-//   } else {
-//     console.error("Element with class 'left-half' not found.");
-//   }
 
-const grid = document.querySelector('.grid');
+document.addEventListener("DOMContentLoaded", () => {
+    const leftPortrait = document.querySelector(".Port-left") as HTMLElement;
+    const rightPortrait = document.querySelector(".Port-right") as HTMLElement;
+    const columns = document.querySelectorAll(".grid .column");
 
-// Dynamically create 12 columns
-for (let i = 0; i < 12; i++) {
-    const column = document.createElement('div');
-    column.classList.add('column');
-    column.dataset.side = i < 6 ? 'left' : 'right'; // First 6 columns are "left", last 6 are "right"
-    if (grid) grid.appendChild(column);
-}
+    columns.forEach((column) => {
+        column.addEventListener("mouseenter", (event) => {
+            const target = event.target as HTMLElement;
 
-// Add hover effects
+            if (target && target.dataset.index) {
+                const index = parseInt(target.dataset.index, 10);
+                const isLeft = index <= 6; // First 6 columns for left portrait
 
-if (grid)
-    grid.addEventListener('mouseover', (e) => {
-        const target = e.target as HTMLElement; // Explicitly cast e.target to HTMLElement
-        if (target && target.classList.contains('column')) {
-            const side = target.dataset.side; // Access dataset safely
-            const potraitL = document.querySelector('.portrait1') as HTMLElement;
-            const potraitR = document.querySelector('.portrait2') as HTMLElement;
+                if (index <= 6) {
+                    // Adjust for the left portrait
+                    const intensity = (6 - index) / 6; // Closer to center -> higher intensity
+                    leftPortrait.style.opacity = (0.5 + intensity * 0.5).toString();
+                    leftPortrait.style.clipPath = `inset(0 ${50 - intensity * 50}% 0 0)`;
 
-            if (side === 'left') {
-                potraitL.style.opacity = '1';
-                potraitL.style.filter = 'blur(0px)';
-                potraitR.style.opacity = '0.3';
-                potraitR.style.filter = 'blur(5px)';
-            } else if (side === 'right') {
-                potraitL.style.opacity = '0.3';
-                potraitL.style.filter = 'blur(5px)';
-                potraitR.style.opacity = '1';
-                potraitR.style.filter = 'blur(0px)';
+                    rightPortrait.style.opacity = "0.5";
+                    rightPortrait.style.clipPath = "inset(0 0 0 50%)";
+                } else {
+                    // Adjust for the right portrait
+                    const intensity = (index - 6) / 6; // Closer to center -> higher intensity
+                    rightPortrait.style.opacity = (0.5 + intensity * 0.5).toString();
+                    rightPortrait.style.clipPath = `inset(0 0 0 ${50 - intensity * 50}%)`;
+
+                    leftPortrait.style.opacity = "0.5";
+                    leftPortrait.style.clipPath = "inset(0 50% 0 0)";
+                }
             }
-        }
+        });
     });
+
+    document.body.addEventListener("mouseleave", () => {
+        leftPortrait.style.opacity = "0.5";
+        leftPortrait.style.clipPath = "inset(0 50% 0 0)";
+
+        rightPortrait.style.opacity = "0.5";
+        rightPortrait.style.clipPath = "inset(0 0 0 50%)";
+    });
+});
+
+
+
 
 
 
 
 const Portfolio = () => {
     return (
-
         <>
-            <div className="Port-left">
-                <div className="image-wrapper">
-                    <Image src={potraitL} alt="portrait" layout="fill" objectFit="cover" />
+            <div className="container">
+                <div className="Port-left">
+                    <div className="image-wrapper">
+                        <Image src={potraitL} alt="portrait" layout="fill" objectFit="cover" />
+                    </div>
                 </div>
-            </div>
-            <div className="Port-right">
-                <div className="image-wrapper">
-                    <Image src={potraitR} alt="portrait" layout="fill" objectFit="cover" />
+                <div className="Port-right">
+                    <div className="image-wrapper">
+                        <Image src={potraitR} alt="portrait" layout="fill" objectFit="cover" />
+                    </div>
+                </div>
+                <div className="grid">
+                    {Array.from({ length: 12 }).map((_, i) => (
+                        <div className="column" key={i} data-index={i + 1}></div>
+                    ))}
                 </div>
             </div>
         </>
@@ -72,6 +80,7 @@ const Portfolio = () => {
 
 
     )
-}
+};
 
-export default Portfolio
+export default Portfolio;
+
