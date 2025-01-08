@@ -1,38 +1,9 @@
 import React from 'react'
 import potraitL from "../../../public/Karan 1_LE_upscale_magic_x4_strength_75_similarity_100.png"
 import potraitR from "../../../public/DSC04980Transp.png"
+import { useEffect } from 'react';
 
 import Image from 'next/image';
-
-
-document.querySelectorAll('.grid .column').forEach(column => {
-    column.addEventListener('mouseover', () => {
-        const leftImage = document.querySelector('.Port-left .image-wrapper') as HTMLElement;
-        const rightImage = document.querySelector('.Port-right .image-wrapper') as HTMLElement;
-
-        if (leftImage) {
-            leftImage.style.transform = 'scale(1.1)';
-        }
-
-        if (rightImage) {
-            rightImage.style.transform = 'scale(1.1)';
-        }
-    });
-
-    column.addEventListener('mouseout', () => {
-        const leftImage = document.querySelector('.Port-left .image-wrapper') as HTMLElement;
-        const rightImage = document.querySelector('.Port-right .image-wrapper') as HTMLElement;
-
-        if (leftImage) {
-            leftImage.style.transform = 'scale(1)';
-        }
-
-        if (rightImage) {
-            rightImage.style.transform = 'scale(1)';
-        }
-    });
-});
-
 
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -85,6 +56,65 @@ document.querySelectorAll('.grid .column').forEach(column => {
 
 
 const Portfolio = () => {
+
+    useEffect(() => {
+        const columns = document.querySelectorAll('.grid .column'); 
+        
+        const handleMouseOver = (event: MouseEvent) => {
+            const column = event.target as HTMLElement; 
+            const leftImage = document.querySelector('.Port-left .image-wrapper') as HTMLElement;
+            const rightImage = document.querySelector('.Port-right .image-wrapper') as HTMLElement;
+            const indexAttr = column.getAttribute('data-index'); 
+            
+            if (indexAttr) {
+                const index = parseInt(indexAttr, 10); if (index <= 6 && index > 0 && leftImage) {
+                    leftImage.style.transform = 'scale(1.1) translateX(-500px)';
+                    leftImage.style.visibility = 'visible';
+                    // Ensure the image is visible 
+                    rightImage.style.visibility = 'hidden';
+                    // Hide the right image 
+                }
+                else if (index > 6 && index <= 12 && rightImage) {
+                    rightImage.style.transform = 'scale(1.05) translateX(600px)';
+                    rightImage.style.visibility = 'visible'; // Ensure the image is visible 
+                    leftImage.style.visibility = 'hidden'; // Hide the left image 
+                }
+            }
+        };
+        const handleMouseOut = () => {
+            const leftImage = document.querySelector('.Port-left .image-wrapper') as HTMLElement;
+            const rightImage = document.querySelector('.Port-right .image-wrapper') as HTMLElement;
+            if (leftImage) {
+                leftImage.style.transform = 'scale(1) translateX(0)';
+                leftImage.style.visibility = 'visible'; // Left image remains visible in center 
+            }
+            if (rightImage) {
+                rightImage.style.transform = 'scale(1)';
+                rightImage.style.visibility = 'hidden';
+                // Hide the right image 
+            }
+        };
+        columns.forEach(column => {
+            column.addEventListener('mouseover', handleMouseOver as EventListener);
+            column.addEventListener('mouseout', handleMouseOut);
+        });
+
+        return () => {
+            columns.forEach(column => {
+                column.removeEventListener('mouseover', handleMouseOver as EventListener);
+                column.removeEventListener('mouseout', handleMouseOut);
+            });
+        };
+    }, []);
+
+
+
+
+
+
+
+
+
     return (
         <>
             <div className="container">
@@ -114,5 +144,7 @@ const Portfolio = () => {
     )
 };
 
-export default Portfolio;
 
+
+
+export default Portfolio;
