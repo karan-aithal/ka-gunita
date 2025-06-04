@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+
+
+
 import "@/scss/app.scss";
 
 import Script from "next/script";
@@ -17,7 +20,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+
+return (
     <html lang="en">
       <head>
       <meta charSet="utf-8"></meta>
@@ -27,12 +31,13 @@ export default function RootLayout({
        <Script type="module" src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/src/vanta.fog.js"/>
       </head>
       {/* BODY ENCOMPASSES THE ENITRE APP */}
-      {/* Set Background Color to Root element of app and set scroll x,y axis overflow conditions */}
+      {/* Set Background Color to Root element of app and set scroll x,y axis overflow conditions  bg-[#CFB4C3]  */}
 
-      <body className={`${inter.className} bg-[#030014] `}>
-        
+      <body>
+      {/* #030014  */}
+     {/* #CFB4C3 */}
         {children}
-      
+        
       </body>  
 
 

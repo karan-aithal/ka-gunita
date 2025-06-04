@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden; // parallax
+  overflow-y: scroll; //parallax
+  perspective: 1px; // parallax
+  transform-style: preserve-3d; // parallax
+}
+
+
+.container {
+  //- padding: -16vh;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  //-top: 0;
+   //- left: 0;
+  //height: 40rem;
+// -   max-height: 968px;
+  min-height: 100vh;
+// max-height: 100vh;
+  
+// - height: auto;
+
+z-index: 1; // Ensure portfolio container is below section2
+
+  // - transform-style: preserve-3d; //parallax
+  
+  //overflow:hidden;
+}
+
+
+.Port-left,
+.Port-right {
+  display: flex; align-items: center; justify-content: center;
+  position: absolute;
+  //width: 100vw;
+  //height: 100vh;
+  // z-index: 1;
+  //object-fit: ;
+  //transition: opacity 0.3s ease, filter 0.3s ease;
+
+   min-height: 100vh;
+
+}
+
+
+.Port-left .image-wrapper-l,
+.Port-right .image-wrapper-r {
+  scale: 0.8;
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  transition: transform 0.8s ease-in-out, visibility ease-in-out; /* Smoother transition */
+  visibility: hidden; /* Initially hidden */
+  z-index: 1.5; /* Ensure images overlap each other */
+}
+
+.Port-left .image-wrapper-l {
+  //left: 0;
+  visibility: visible; /* Default visible */
+}
+
+.Port-right .image-wrapper-r {
+ //right: 0;
+}
+
+// Just an Overlay for tracking Mouse movements
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  //gap: 10px;
+  width: 100%;
+  height: 720px;
+  z-index: 1;
+  //pointer-events: none;
+}
+
+.column {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container {
+  width: 45%;
+  /* Adjust width as needed */
+}
+
+
+.grid .column:hover {
+  background: rgba(0, 0, 0, 0.2);
+  /* Highlight on hover */
+}
+
+.Coder-left, .Design-right { 
+  flex: 1; 
+  transition: transform 0.8s ease-in-out; /* Smoother transition */
+}
+
+.Coder-left{
+  position: absolute;  
+  right: 18vw;
+
+  //border: 2px solid black;
+  padding: 1rem;
+  width: 28vw;
+  //z-index: 2;
+}
+
+.Design-right{
+  position: absolute;
+  left:18vw;
+
+  //border: 2px solid black;
+  padding: 1rem;
+  width: 28vw;
+
+ // position: relative;
+ z-index: -1;
+  
+}
+
+.Coder-left h1{
+ // color: bisque;
+  // font-size: 10rem;
+  font-size: 6vw;
+  
+  //letter-spacing: .6rem;
+}
+.Coder-left p{
+  color: black;
+  font-size: 3.4vh;
+  // font-size: 1.75rem;
+
+  //letter-spacing: .6rem;
+}
+
+
+.Design-right h1{
+  font-size: 5.2vw;
+ // letter-spacing: .3rem;
+}
+.Design-right p{
+  font-size: 3.4vh;
+
+  //font-size: 1.75rem;
+}

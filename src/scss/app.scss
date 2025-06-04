@@ -29,20 +29,35 @@
 
 @use "pages";
 
+//@import 'variables';
+
 // @import '/src/styles/_nav.scss';
 
 // default margin of body is 8px fix;
 
-html, body
-{
-    margin: 0px; padding: 0px;
+html{
+	overflow: hidden; // parallax
 }
 
-body 
+html, body
 {
-	background-color:#6874d0;
+	scroll-behavior: smooth;
+    margin: 0px; padding: 0px;
+	
+}
+
+body
+{
+	background-color:white;
+	//#CFB4C3
+	// #6874d0
 	height: 100vh;
-	width: auto;
+	width: 1000w;
+	min-height: 100vh;
+	min-width: 100vw;
+	max-width: 100vw;  
+	 overflow-x: hidden;   // Prevent horizontal scroll
+
 }
 
 

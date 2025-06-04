@@ -1,195 +1,98 @@
-body {
-  margin: 0;
-  height: 100vh;
-  // overflow: hidden;
-}
-
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 100vw;
-  height: 100vh;
-  //overflow:hidden;
+  min-height: 100vh;
+  z-index: 1;
 }
-
 
 .Port-left,
 .Port-right {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-
-  //object-fit: ;
-  //transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-
-// .Port-left {
-//   //opacity: 0.5;
-//   //clip-path: inset(0 50% 0 0);
-//   //filter: blur(5px);
-// }
-
-// .Port-right {
-//   opacity: 0.5;
-
-//   //clip-path: inset(20% 48% 75% 49%); // top left bottom right 
-//  // filter: blur(1px);
-// }
-
-.image-wrapper {
-  // border: 10vh;
   position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s ease-in-out, visibility ease-in-out; /* Smoother transition */
-  visibility: hidden; /* Initially hidden */
-
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.Port-left .image-wrapper { visibility: visible; /* Default visible */ }
+.Coder-left,
+.Design-right {
+  position: relative;
+  z-index: 2; // Above images
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0s, visibility 0s;
+  padding: 1rem;
+  width: 28vw;
+}
+
+.Coder-left h1,
+.Coder-left p,
+.Design-right h1,
+.Design-right p {
+  transition: opacity 0s, visibility 0s;
+}
 
 
-.grid {
+.Port-left{
+  padding-right: 16rem;
+  padding-left: 2rem;
+}
+
+
+.Port-right{
+  padding-left: 16rem;
+  padding-right: 2rem;
+}
+
+.Coder-left h1,
+.Design-right h1 {
+  font-size: 5vw;
+}
+
+.Coder-left p,
+.Design-right p {
+  font-size: 3.4vh;
+}
+
+.image-wrapper-l,
+.image-wrapper-r {
   position: absolute;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 10px;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  scale: 0.8;
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0s, visibility 0s;
   z-index: 1;
-  //pointer-events: none;
+  pointer-events: none; // Prevent images from blocking hover
+   
 }
 
-.column {
-  width: 100%;
-  height: 100%;
+.image-wrapper-l {
+  visibility: visible;
+  opacity: 1;
+   transform: none;
 }
 
-.grid-container {
-  width: 45%;
-  /* Adjust width as needed */
+.image-wrapper-r {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  scale: 0.4;
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0s, visibility 0s;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: none;
+  left:-52vw;
 }
 
-// .column {
-//   pointer-events: all;
-//   background: rgba(0, 0, 0, 0); /* Invisible columns for hover tracking */
+// .image-wrapper-r {
+//   visibility: hideen;
+//   opacity: 0;
 // }
-
-/* Animate images on grid item hover */
-/* This assumes your grid is in the middle */
-
-.grid .column:hover {
-  background: rgba(0, 0, 0, 0.2);
-  /* Highlight on hover */
-}
-
-
-/* Group first two columns */
-// .grid .column:nth-child(1),
-// .grid .column:nth-child(2),
-// .grid .column:nth-child(3),
-// .grid .column:nth-child(4),
-// .grid .column:nth-child(5), 
-// .grid .column:nth-child(6) {
-//   /* Add a common class to these columns */
-//   grid-area: group1; 
-// }
-
-
-// .grid .column:nth-child(7),
-// .grid .column:nth-child(8),
-// .grid .column:nth-child(9),
-// .grid .column:nth-child(10),
-// .grid .column:nth-child(11),
-// .grid .column:nth-child(12) {
-//   /* Add a common class to these columns */
-//   grid-area: group2; 
-// }
-
-/* Hover effect for the first group */
-// .grid .column[data-group="group1"]:hover ~ .Port-left .image-wrapper {
-//   transform: translateY(-20%);
-//    filter: blur(5px);
-// }
-
-
-
-
-
-// .grid .column:nth-child(3):hover ~ .Port-right .image-wrapper img {
-//   transform: translateX(20%); /* Adjust translation value as needed */
-// }
-
-//   .image-wrapper {
-//     //position: relative;
-//     width: 100%;
-//     height: 100%;
-//   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .Port-left img{
-//  // max-width:3840px;
-//  // max-height:3071px;
-//  width: auto;
-//  height: auto;
-
-//   display: block;
-//   max-width: 100%;
-//   max-height: 100%;
-//   position: absolute;
-// //   top: 0;
-// //   bottom: 0;
-// //   left: 0;
-// //   right: 0;
-// //visibility: hidden;
-//   //object-fit: contain;
-//     //overflow: hidden;
-//     // width: 100px;
-//     // height: 100px;
-// }
-
-
-
-
-// .Port-right img{
-//     // max-width:3840px;
-//     // max-height:3071px;
-//     width: auto;
-//     height: auto;
-
-//      display: block;
-//      max-width: 100%;
-//      max-height: 100%;
-//      position: absolute;
-//    //   top: 0;
-//    //   bottom: 0;
-//    //   left: 0;
-//    //   right: 0;
-
-//      //object-fit: contain;
-//        //overflow: hidden;
-//        // width: 100px;
-//        // height: 100px;
-//    }
